@@ -139,20 +139,19 @@ public class Bootstrap implements ApplicationListener<ContextRefreshedEvent> {
                         "To store the brownies: Keep them covered on your counter for 3 or 4 days or up to one week in the refrigerator. \n" +
                         "To freeze the brownies: The brownies can be frozen for up to three months, but the texture of the caramel may not be as creamy as before freezing."
         );
-        notes.setRecipe(browniesRecipe);
         browniesRecipe.setNotes(notes);
 
-        browniesRecipe.getIngredients().add(new Ingredient("Caramel Sauce", new BigDecimal("0.3"), cup, browniesRecipe));
-        browniesRecipe.getIngredients().add(new Ingredient("All-purpose flour", new BigDecimal("1.25"), cup, browniesRecipe));
-        browniesRecipe.getIngredients().add(new Ingredient("Dutch processed cocoa powder", new BigDecimal("0.25"), cup, browniesRecipe));
-        browniesRecipe.getIngredients().add(new Ingredient("Unsalted butter", new BigDecimal("0.75"), cup, browniesRecipe));
-        browniesRecipe.getIngredients().add(new Ingredient("Unsweetened chocolate, chopped", new BigDecimal("3"), ounce, browniesRecipe));
-        browniesRecipe.getIngredients().add(new Ingredient("Granulated sugar", new BigDecimal("1.25"), cup, browniesRecipe));
-        browniesRecipe.getIngredients().add(new Ingredient("Brown sugar", new BigDecimal("0.25"), cup, browniesRecipe));
-        browniesRecipe.getIngredients().add(new Ingredient("Kosher salt", new BigDecimal("1"), teaspoon, browniesRecipe));
-        browniesRecipe.getIngredients().add(new Ingredient("Vanilla extract", new BigDecimal("2"), teaspoon, browniesRecipe));
-        browniesRecipe.getIngredients().add(new Ingredient("Eggs", new BigDecimal("3"), each, browniesRecipe));
-        browniesRecipe.getIngredients().add(new Ingredient("Flake salt, optional", new BigDecimal("0.5"), teaspoon, browniesRecipe));
+        browniesRecipe.addIngredient(new Ingredient("Caramel Sauce", new BigDecimal("0.3"), cup));
+        browniesRecipe.addIngredient(new Ingredient("All-purpose flour", new BigDecimal("1.25"), cup));
+        browniesRecipe.addIngredient(new Ingredient("Dutch processed cocoa powder", new BigDecimal("0.25"), cup));
+        browniesRecipe.addIngredient(new Ingredient("Unsalted butter", new BigDecimal("0.75"), cup));
+        browniesRecipe.addIngredient(new Ingredient("Unsweetened chocolate, chopped", new BigDecimal("3"), ounce));
+        browniesRecipe.addIngredient(new Ingredient("Granulated sugar", new BigDecimal("1.25"), cup));
+        browniesRecipe.addIngredient(new Ingredient("Brown sugar", new BigDecimal("0.25"), cup));
+        browniesRecipe.addIngredient(new Ingredient("Kosher salt", new BigDecimal("1"), teaspoon));
+        browniesRecipe.addIngredient(new Ingredient("Vanilla extract", new BigDecimal("2"), teaspoon));
+        browniesRecipe.addIngredient(new Ingredient("Eggs", new BigDecimal("3"), each));
+        browniesRecipe.addIngredient(new Ingredient("Flake salt, optional", new BigDecimal("0.5"), teaspoon));
 
         browniesRecipe.getCategories().add(dessertCategory);
 
@@ -195,20 +194,19 @@ public class Bootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
         Notes shrimpButterNotes = new Notes();
         shrimpButterNotes.setRecipeNotes("Be sure to pat the shrimp dry; if they are wet, they won’t mix into the butter properly.");
-        shrimpButterNotes.setRecipe(shrimpButterRecipe);
         shrimpButterRecipe.setNotes(shrimpButterNotes);
 
-        shrimpButterRecipe.getIngredients().add(new Ingredient("Small white onion, finely minced", new BigDecimal("0.5"), cup, shrimpButterRecipe));
-        shrimpButterRecipe.getIngredients().add(new Ingredient("Large shrimp, shell on", new BigDecimal("1.5"), pound, shrimpButterRecipe));
-        shrimpButterRecipe.getIngredients().add(new Ingredient("Kosher salt", new BigDecimal("2"), teaspoon, shrimpButterRecipe));
-        shrimpButterRecipe.getIngredients().add(new Ingredient("Unsalted butter", new BigDecimal("1"), pound, shrimpButterRecipe));
-        shrimpButterRecipe.getIngredients().add(new Ingredient("Lemon zest", new BigDecimal("2"), teaspoon, shrimpButterRecipe));
-        shrimpButterRecipe.getIngredients().add(new Ingredient("Lemon juice", new BigDecimal("2"), tablespoon, shrimpButterRecipe));
-        shrimpButterRecipe.getIngredients().add(new Ingredient("Worcestershire sauce", new BigDecimal("1"), tablespoon, shrimpButterRecipe));
-        shrimpButterRecipe.getIngredients().add(new Ingredient("Finely chopped fresh parsley", new BigDecimal("0.25"), cup, shrimpButterRecipe));
-        shrimpButterRecipe.getIngredients().add(new Ingredient("Finely chopped fresh dill", new BigDecimal("0.25"), cup, shrimpButterRecipe));
-        shrimpButterRecipe.getIngredients().add(new Ingredient("Freshly ground black pepper", new BigDecimal("0.5"), teaspoon, shrimpButterRecipe));
-        shrimpButterRecipe.getIngredients().add(new Ingredient("Celery seed", new BigDecimal("0.5"), teaspoon, shrimpButterRecipe));
+        shrimpButterRecipe.addIngredient(new Ingredient("Small white onion, finely minced", new BigDecimal("0.5"), cup));
+        shrimpButterRecipe.addIngredient(new Ingredient("Large shrimp, shell on", new BigDecimal("1.5"), pound));
+        shrimpButterRecipe.addIngredient(new Ingredient("Kosher salt", new BigDecimal("2"), teaspoon));
+        shrimpButterRecipe.addIngredient(new Ingredient("Unsalted butter", new BigDecimal("1"), pound));
+        shrimpButterRecipe.addIngredient(new Ingredient("Lemon zest", new BigDecimal("2"), teaspoon));
+        shrimpButterRecipe.addIngredient(new Ingredient("Lemon juice", new BigDecimal("2"), tablespoon));
+        shrimpButterRecipe.addIngredient(new Ingredient("Worcestershire sauce", new BigDecimal("1"), tablespoon));
+        shrimpButterRecipe.addIngredient(new Ingredient("Finely chopped fresh parsley", new BigDecimal("0.25"), cup));
+        shrimpButterRecipe.addIngredient(new Ingredient("Finely chopped fresh dill", new BigDecimal("0.25"), cup));
+        shrimpButterRecipe.addIngredient(new Ingredient("Freshly ground black pepper", new BigDecimal("0.5"), teaspoon));
+        shrimpButterRecipe.addIngredient(new Ingredient("Celery seed", new BigDecimal("0.5"), teaspoon));
 
         shrimpButterRecipe.getCategories().add(snacksAndAppetizers);
 
