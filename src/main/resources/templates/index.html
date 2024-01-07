@@ -5,6 +5,13 @@
     <title>Title</title>
 </head>
 <body>
+<!--/*@thymesVar id="recipe" type="java.util.List<mm.recipes.domain.Recipe>"*/-->
     <h1>My Recipes</h1>
+
+    <ul>
+        <li th:each="recipe : ${recipes}">
+            <span th:text="${recipe.description}">Recipe</span>
+        </li>
+    </ul>
 </body>
 </html>
