@@ -1,12 +1,12 @@
 package mm.recipes.bootstrap;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import mm.recipes.domain.*;
 import mm.recipes.repositories.CategoryRepository;
 import mm.recipes.repositories.IngredientRepository;
 import mm.recipes.repositories.RecipeRepository;
 import mm.recipes.repositories.UnitOfMeasureRepository;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
@@ -18,6 +18,7 @@ import java.util.Optional;
 
 @Component
 @AllArgsConstructor
+@Slf4j
 public class Bootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
     private final CategoryRepository categoryRepository;
@@ -33,7 +34,7 @@ public class Bootstrap implements ApplicationListener<ContextRefreshedEvent> {
     private List<Recipe> getRecipes() {
         List<Recipe> recipes = new ArrayList<>(2);
 
-        System.out.println("Loading units of measure...");
+        log.info("Loading units of measure...");
         Optional<UnitOfMeasure> eachUnitOfMeasureOptional = unitOfMeasureRepository.findByDescription("Each");
         if (eachUnitOfMeasureOptional.isEmpty()) {
             throw new RuntimeException("Expected UOM not found: Each");
@@ -70,7 +71,7 @@ public class Bootstrap implements ApplicationListener<ContextRefreshedEvent> {
         }
         UnitOfMeasure pound = poundUomOptional.get();
 
-        System.out.println("Loading categories...");
+        log.info("Loading categories...");
 
         Optional<Category> dessertCategoryOptional = categoryRepository.findByDescription("Dessert");
         if (dessertCategoryOptional.isEmpty()) {
@@ -84,7 +85,7 @@ public class Bootstrap implements ApplicationListener<ContextRefreshedEvent> {
         }
         Category snacksAndAppetizers = snacksAndAppetizersCategoryOptional.get();
 
-        System.out.println("Loading recipes...");
+        log.info("Loading recipes...");
         Recipe browniesRecipe = new Recipe();
         browniesRecipe.setDescription("Caramel Brownies");
         browniesRecipe.setPrepTime(20);
